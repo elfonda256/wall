@@ -9,5 +9,11 @@ if (!url || !key) {
   );
 }
 
-/** Browser client using the public key; row level security decides what it may do. */
-export const supabase = createClient(url, key);
+/**
+ * Browser client using the public key; row level security decides what it may do.
+ * There is no login, so session handling is off: with token auto-refresh on, the
+ * auth client re-checks the session on tab focus and can hold up later requests.
+ */
+export const supabase = createClient(url, key, {
+  auth: { persistSession: false, autoRefreshToken: false, detectSessionInUrl: false },
+});
