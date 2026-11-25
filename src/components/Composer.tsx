@@ -112,7 +112,7 @@ export function Composer({ onShare }: ComposerProps) {
           onChange={(event) => setAuthorName(event.target.value)}
           maxLength={MAX_NAME_LENGTH}
           placeholder="Your name (optional)"
-          className="min-w-0 flex-1 border border-line-strong bg-white px-2 py-1 text-xs text-ink focus:border-brand focus:outline-none"
+          className="w-full border border-line-strong bg-white px-2 py-1 text-xs text-ink focus:border-brand focus:outline-none sm:w-auto sm:min-w-0 sm:flex-1"
         />
 
         <label
